@@ -19,8 +19,9 @@ function App() {
     <button onClick={()=>{ dispatch(logoutCreator()) }}>logout</button>
     <h1>{countState}</h1>
     <button
-    onClick={()=>{dispatch(incrementCounter())}}>+</button>
-    <button onClick={()=>{dispatch(decrementCounter()) }}>-</button>
+    onClick={()=>{dispatch(incrementCounter(1))}}>+1</button>
+    <button onClick={()=>{dispatch(decrementCounter()) }}>-1</button>
+    <button onClick={()=>{ dispatch(incrementCounter(10)) }}>+10</button>
 </>
   );
 }
