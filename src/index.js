@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createStore} from 'redux'
-import reducer from './redux/reducer';
+import {combineReducers, createStore} from 'redux'
+import { countReducer, loginReducer } from './redux/reducer';
 import {Provider} from 'react-redux'
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let mystore = createStore(reducer);
+const rootReducer = combineReducers({
+    count : countReducer,
+    logged : loginReducer,
+}) 
+let mystore = createStore(rootReducer);
 root.render(
    <Provider store={mystore}>
     <App />
